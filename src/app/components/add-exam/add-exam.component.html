@@ -1,0 +1,31 @@
+<div class="submit-form">
+    <div *ngIf="!submitted">
+        <div class="form-group">
+            <label for="title">title</label>
+            <input type="text" id="title" class="form-control" name="title" [(ngModel)]="exam.title" required/>
+        </div>
+        <div class="form-group">
+            <label for="subject">subject</label>
+            <input type="text" id="subject" class="form-control" name="subject" [(ngModel)]="exam.subject" required/>
+        </div>
+        <div class="form-group">
+            <label for="description">description</label>
+            <input type="text" id="description" class="form-control" name="description" [(ngModel)]="exam.description" required/>
+        </div>
+        <div class="form-group">
+            <label for="url">url</label>
+            <input type="text" id="url" class="form-control" name="url" [(ngModel)]="exam.url" required/>
+        </div>
+        <div class="form-group">
+            <label for="date">date</label>
+            <input type="text" id="date" class="form-control" name="date" [(ngModel)]="exam.date" required/>
+        </div>
+    
+        <button class="btn btn-success" (click)="saveExam()">Save Exam</button>
+    </div>
+    
+    <div *ngIf="submitted">
+        <h4>Exam submitted succesfully</h4>
+        <button class="btn btn-success" (click)="newExam()">Add Exam</button>
+    </div>
+</div>

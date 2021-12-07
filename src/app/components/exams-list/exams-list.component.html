@@ -1,0 +1,20 @@
+<div class="list-row">
+    <div class="col-md-6">
+        <h4>Exams List</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let exam of exams; let i = index" [class.active]="i == currentIndex" (click)="setActiveExam(exam, i)">
+                {{exam.title}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentExam">
+            <app-exam-details (refreshList)="refreshList()" [exam]="currentExam"></app-exam-details>
+        </div>
+        
+        <div *ngIf ="!currentExam">
+            <br/>
+            <p>Please click on an Exam</p>
+        </div>
+    </div>
+</div>
