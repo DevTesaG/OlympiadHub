@@ -1,0 +1,11 @@
+<div class="form-container">
+    <h2>Login</h2>
+    <div class="form-group">
+        <input type="text" name="email" placeholder="Email address" [(ngModel)]="email">
+    <div>
+    <div class="form-group">
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+    </div>
+        <button type="submit" class="btn-success" (click)="onSubmit()">Log in</button>
+    <a routerLink="/singup" routerLinkActive="active">No account? <strong>Create one!</strong> </a>
+</div>

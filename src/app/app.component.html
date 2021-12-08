@@ -1,18 +1,34 @@
 <div>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Olympic Hub</a>
-    <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a routerLink="exams" class="nav-link">Exams</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="add" class="nav-link">Add</a>
-      </li>
+    <div class="container-fluid">
+
+      <a href="#" class="navbar-brand">Olympic Hub</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a routerLink="dashboard" class="nav-link">dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="exams" class="nav-link">Exams</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="add" class="nav-link">Add Exam</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="uploadfile" class="nav-link">Upload File</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="files" class="nav-link">Files</a>
+        </li>
+      </ul>
+
+        <div class="d-flex">
+          <button (click)="logOut()" class="btn btn-primary" style="float:right"><strong>Logout</strong></button>
+        </div>
+        
     </div>
   </nav>
-
-  <div class="container mt-3">
-    <h2>{{title}}</h2>
-    <router-outlet></router-outlet>
+    
+    <div class="container mt-3">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>

@@ -19,20 +19,20 @@ export class ExamService {
   }
 
   //Alternativa getall ?
-  // getAllExams(): Observable<Exam[]> {
-  //   return this.examsRef.valueChanges({ id: 'id' }) as Observable<Exam[]>;
-  // }
-
   getAllExams(): Observable<Exam[]> {
-    return this.examsRef.snapshotChanges().pipe(
-      map((changes) =>
-        changes.map((c) => ({
-          id: c.payload.doc.id,
-          ...c.payload.doc.data(),
-        }))
-      )
-    );
+    return this.examsRef.valueChanges({ id: 'id' }) as Observable<Exam[]>;
   }
+
+  // getAllExams(): Observable<Exam[]> {
+  //   return this.examsRef.snapshotChanges().pipe(
+  //     map((changes) =>
+  //       changes.map((c) => ({
+  //         id: c.payload.doc.id,
+  //         ...c.payload.doc.data(),
+  //       }))
+  //     )
+  //   );
+  // }
 
   createExam(exam: Exam): any {
     return this.examsRef.add({ ...exam });
